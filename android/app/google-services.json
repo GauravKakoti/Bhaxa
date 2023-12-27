@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "102520075898",
+    "firebase_url": "https://bhaxa-login-default-rtdb.firebaseio.com",
+    "project_id": "bhaxa-login",
+    "storage_bucket": "bhaxa-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102520075898:android:01d3b8490206a84eaeadc3",
+        "android_client_info": {
+          "package_name": "com.mycompany.bhaxalogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102520075898-pn823fvgkp7ud5lj8mambr07n2dq40jl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.bhaxalogin",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "102520075898-mjcbvnmqe9b02nkbp8orun7frgt53qoq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkcJRmSytxPE9461d65s3wcBEXMqhcXzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102520075898-mjcbvnmqe9b02nkbp8orun7frgt53qoq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "102520075898-3dvrnug6tj8pqmtuc0ata6vddcsdqhta.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.bhaxalogin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

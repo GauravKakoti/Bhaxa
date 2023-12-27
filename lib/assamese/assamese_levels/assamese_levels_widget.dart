@@ -1,0 +1,333 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flip_card/flip_card.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'assamese_levels_model.dart';
+export 'assamese_levels_model.dart';
+
+class AssameseLevelsWidget extends StatefulWidget {
+  const AssameseLevelsWidget({Key? key}) : super(key: key);
+
+  @override
+  _AssameseLevelsWidgetState createState() => _AssameseLevelsWidgetState();
+}
+
+class _AssameseLevelsWidgetState extends State<AssameseLevelsWidget> {
+  late AssameseLevelsModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => AssameseLevelsModel());
+
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'AssameseLevels'});
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
+    return GestureDetector(
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).primary,
+          automaticallyImplyLeading: false,
+          title: Text(
+            'BHAXA',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Outfit',
+                  color: FlutterFlowTheme.of(context).info,
+                  fontSize: 42.0,
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+          actions: [],
+          centerTitle: true,
+          elevation: 2.0,
+        ),
+        body: SafeArea(
+          top: true,
+          child: Align(
+            alignment: AlignmentDirectional(0.0, 0.0),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'ASSAMESE',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Readex Pro',
+                          fontSize: 45.0,
+                          fontWeight: FontWeight.w800,
+                        ),
+                  ),
+                  FlipCard(
+                    fill: Fill.fillBack,
+                    direction: FlipDirection.HORIZONTAL,
+                    speed: 400,
+                    front: Container(
+                      width: 180.0,
+                      height: 43.0,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF97A4AD),
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Text(
+                          '(অসমীয়া)',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Readex Pro',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 30.0,
+                              ),
+                        ),
+                      ),
+                    ),
+                    back: Container(
+                      width: 180.0,
+                      height: 43.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).accent2,
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Text(
+                          '/Oxomiya/',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Readex Pro',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                    child: Text(
+                      'Assamese is an eastern Indo-Aryan language spoken by about 20 million people in the Indian states of Assam, Meghalaya and Arunachal Pradesh, and also spoken in Bangladesh and Bhutan.',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            fontSize: 16.0,
+                          ),
+                    ),
+                  ),
+                  Text(
+                    'LEVELS',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Readex Pro',
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent(
+                              'ASSAMESE_LEVELS_PAGE_LEVEL_1_BTN_ON_TAP');
+                          logFirebaseEvent('Button_navigate_to');
+
+                          context.pushNamed('AssameseLevel1');
+                        },
+                        text: 'Level 1',
+                        options: FFButtonOptions(
+                          width: 95.0,
+                          height: 95.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                      FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent(
+                              'ASSAMESE_LEVELS_PAGE_LEVEL_2_BTN_ON_TAP');
+                          logFirebaseEvent('Button_navigate_to');
+
+                          context.pushNamed('AssameseLevel2');
+                        },
+                        text: 'Level 2',
+                        options: FFButtonOptions(
+                          width: 95.0,
+                          height: 95.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                      FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent(
+                              'ASSAMESE_LEVELS_PAGE_LEVEL_3_BTN_ON_TAP');
+                          logFirebaseEvent('Button_navigate_to');
+
+                          context.pushNamed('AssameseLevel3');
+                        },
+                        text: 'Level 3',
+                        options: FFButtonOptions(
+                          width: 95.0,
+                          height: 95.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    ].divide(SizedBox(width: 30.0)),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent(
+                              'ASSAMESE_LEVELS_PAGE_LEVEL_4_BTN_ON_TAP');
+                          logFirebaseEvent('Button_navigate_to');
+
+                          context.pushNamed('AssameseLevel4');
+                        },
+                        text: 'Level 4',
+                        options: FFButtonOptions(
+                          width: 95.0,
+                          height: 95.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                      FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent(
+                              'ASSAMESE_LEVELS_PAGE_LEVEL_5_BTN_ON_TAP');
+                          logFirebaseEvent('Button_navigate_to');
+
+                          context.pushNamed('AssameseLevel5');
+                        },
+                        text: 'Level 5',
+                        options: FFButtonOptions(
+                          width: 95.0,
+                          height: 95.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    ].divide(SizedBox(width: 30.0)),
+                  ),
+                ].divide(SizedBox(height: 15.0)),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
